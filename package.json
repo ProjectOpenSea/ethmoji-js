@@ -1,0 +1,19 @@
+{
+  "name": "ethmoji-avatar",
+  "version": "0.0.1",
+  "description": "Add an Ethmoji avatar for users of your dapp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProjectOpenSea/ethmoji-avatar.git"
+  },
+  "author": "support@opensea.io",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ProjectOpenSea/ethmoji-avatar/issues"
+  },
+  "homepage": "https://github.com/ProjectOpenSea/ethmoji-avatar#readme"
+}

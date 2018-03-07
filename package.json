@@ -14,7 +14,11 @@
     "type": "git",
     "url": "git+https://github.com/ProjectOpenSea/ethmoji-avatar.git"
   },
-  "keywords": ["ethereum", "ethmoji", "smart-contracts"],
+  "keywords": [
+    "ethereum",
+    "ethmoji",
+    "smart-contracts"
+  ],
   "author": "support@opensea.io",
   "license": "ISC",
   "bugs": {
@@ -24,6 +28,7 @@
   "dependencies": {
     "ethmoji-contract": "https://github.com/dfinzer/ethmoji-contracts",
     "humps": "^2.0.1",
+    "jquery-param": "^1.0.0",
     "truffle-contract": "https://github.com/ProjectOpenSea/truffle-contract",
     "web3": "^0.20.4"
   },

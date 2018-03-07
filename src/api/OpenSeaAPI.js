@@ -36,7 +36,6 @@ export default class OpenSeaAPI {
     return response.json();
   }
 
-  // Ensures that the status of a response is OK
   checkStatus(response) {
     if (!response.ok && response.status === 401) {
       throw new Error("Unauthorized");

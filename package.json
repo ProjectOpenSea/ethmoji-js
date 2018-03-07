@@ -7,17 +7,14 @@
     "build": "npm run build:clean && npm run build:lib",
     "build:clean": "rm -rf lib",
     "build:lib": "babel src --out-dir lib",
-    "prepublish": "NODE_ENV=production npm run build"
+    "prepublish": "NODE_ENV=production npm run build",
+    "lint": "eslint --fix src/"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ProjectOpenSea/ethmoji-avatar.git"
   },
-  "keywords": [
-    "ethereum",
-    "ethmoji",
-    "smart-contracts"
-  ],
+  "keywords": ["ethereum", "ethmoji", "smart-contracts"],
   "author": "support@opensea.io",
   "license": "ISC",
   "bugs": {

@@ -4,35 +4,20 @@ import { decamelizeKeys } from "humps";
 import { OPENSEA_API_URL } from "./constants";
 
 export default class OpenSeaAPI {
-  fetch(path, options = {}) {
+  fetch(path) {
     return fetch(OPENSEA_API_URL.toString() + path.toString(), {
-      ...options,
+      method: "GET",
       headers: {
         Accept: "application/json",
-        "Content-Type": "application/json",
-        ...(options.headers || {})
+        "Content-Type": "application/json"
       }
     });
   }
 
   async get(path, data = {}) {
-    const options = {
-      method: "GET"
-    };
-
     path += "?" + param(decamelizeKeys(data));
 
-    let response = await this.fetch(path, options);
-    response = this.checkStatus(response);
-    return response.json();
-  }
-
-  async post(path, data = {}) {
-    const options = {
-      method: "POST",
-      body: JSON.stringify(data)
-    };
-    let response = await this.fetch(path, options);
+    let response = await this.fetch(path);
     response = this.checkStatus(response);
     return response.json();
   }

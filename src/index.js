@@ -6,11 +6,6 @@ import OpenSeaAPI from "./openSeaAPI";
 import Avatar from "./avatar";
 
 export default class EthmojiAPI {
-  contractInstance = undefined;
-  openSeaAPI = undefined;
-  web3Provider = undefined;
-  networkId = undefined;
-
   async init(web3Provider) {
     if (web3Provider === undefined) {
       throw new Error("Web3 provider is undefined");

@@ -7,7 +7,7 @@
     "build": "npm run build:clean && npm run build:lib",
     "build:clean": "rm -rf lib",
     "build:lib": "babel src --out-dir lib",
-    "prepublish": "NODE_ENV=production npm run build",
+    "prepare": "NODE_ENV=production npm run build",
     "lint": "eslint --fix src/"
   },
   "repository": {

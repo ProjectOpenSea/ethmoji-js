@@ -2,7 +2,7 @@
   "name": "ethmoji-js",
   "version": "0.0.1",
   "description": "Add an Ethmoji avatar for users of your dapp",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "npm run build:clean && npm run build:lib",
     "build:clean": "rm -rf lib",

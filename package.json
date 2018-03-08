@@ -14,11 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/ProjectOpenSea/ethmoji-avatar.git"
   },
-  "keywords": [
-    "ethereum",
-    "ethmoji",
-    "smart-contracts"
-  ],
+  "keywords": ["ethereum", "ethmoji", "smart-contracts"],
   "author": "support@opensea.io",
   "license": "ISC",
   "bugs": {

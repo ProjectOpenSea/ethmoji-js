@@ -17,7 +17,7 @@ import EthmojiAPI from "ethmoji-js";
 const ethmojiAPI = new EthmojiAPI();
 await ethmojiAPI.init(web3.currentProvider)
 await avatar =  ethmojiAPI.getAvatar(ownerAddress);
-=> Avatar = {
+=> Avatar {
   name: Ethmoji name
   tokenId: Ethmoji tokenId in the smart contract
   imageUrl: Ethmoji image url for displaying

@@ -1,10 +1,9 @@
-import Web3 from "web3";
 import contract from "truffle-contract";
 import { Ethmoji } from "ethmoji-contract";
 
 import { ETHMOJI_ADDRESS } from "./constants";
-import OpenSeaAPI from "./OpenSeaAPI";
-import Avatar from "./Avatar";
+import OpenSeaAPI from "./openSeaAPI";
+import Avatar from "./avatar";
 
 export default class EthmojiAPI {
   contractInstance = undefined;
@@ -12,9 +11,10 @@ export default class EthmojiAPI {
   web3Provider = undefined;
   networkId = undefined;
 
-  async init(web3Provider, network = "rinkeby") {
-    if (web3Provider === undefined)
+  async init(web3Provider) {
+    if (web3Provider === undefined) {
       throw new Error("Web3 provider is undefined");
+    }
     this.web3Provider = web3Provider;
     this.openSeaAPI = new OpenSeaAPI();
 
@@ -22,9 +22,6 @@ export default class EthmojiAPI {
     EthmojiContract.setProvider(this.web3Provider);
     try {
       this.contractInstance = await EthmojiContract.at(ETHMOJI_ADDRESS);
-      this.web3.version.getNetwork((error, result) => {
-        this.networkId = result;
-      });
     } catch (error) {
       throw new Error(error);
     }
@@ -41,9 +38,5 @@ export default class EthmojiAPI {
     } catch (error) {
       throw new Error(error);
     }
-  }
-
-  get web3() {
-    return new Web3(this.web3Provider);
   }
 }

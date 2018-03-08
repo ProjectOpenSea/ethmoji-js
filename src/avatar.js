@@ -1,4 +1,3 @@
-import BigNumber from "bignumber.js";
 import { OPENSEA_URL } from "./constants";
 
 export default class Avatar {

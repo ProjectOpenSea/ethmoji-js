@@ -1,5 +1,5 @@
 import contract from "truffle-contract";
-import Ethmoji from "./Ethmoji.json";
+import Ethmoji from "ethmoji-contract";
 
 import { ETHMOJI_ADDRESS } from "./constants";
 import OpenSeaAPI from "./openSeaAPI";

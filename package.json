@@ -1,6 +1,6 @@
 {
   "name": "ethmoji-js",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Add an Ethmoji avatar for users of your dapp",
   "main": "lib/index.js",
   "scripts": {
@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/ProjectOpenSea/ethmoji-js#readme",
   "dependencies": {
+    "ethmoji-contract": "https://github.com/dfinzer/ethmoji-contracts",
     "humps": "^2.0.1",
     "jquery-param": "^1.0.0",
     "truffle-contract": "https://github.com/ProjectOpenSea/truffle-contract",

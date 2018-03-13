@@ -1,11 +1,13 @@
 import contract from "truffle-contract";
-import Ethmoji from "ethmoji-contract";
+import { Ethmoji } from "ethmoji-contracts";
 
 import { ETHMOJI_ADDRESS } from "./constants";
 import OpenSeaAPI from "./openSeaAPI";
 import Avatar from "./avatar";
 
 export default class EthmojiAPI {
+  constructor() {}
+
   async init(web3Provider) {
     if (web3Provider === undefined) {
       throw new Error("Web3 provider is undefined");

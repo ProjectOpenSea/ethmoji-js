@@ -1,11 +1,13 @@
 import param from "jquery-param";
 import { decamelizeKeys } from "humps";
 
-import { OPENSEA_API_URL } from "./constants";
-
 export default class OpenSeaAPI {
+  constructor(apiUrl) {
+    this.apiUrl = apiUrl;
+  }
+
   fetch(path) {
-    return fetch(OPENSEA_API_URL.toString() + path.toString(), {
+    return fetch(this.apiUrl.toString() + path.toString(), {
       method: "GET",
       headers: {
         Accept: "application/json",

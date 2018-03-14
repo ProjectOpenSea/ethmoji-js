@@ -1,24 +1,42 @@
+import Web3 from "web3";
 import contract from "truffle-contract";
 import { Ethmoji } from "ethmoji-contracts";
 
-import { ETHMOJI_ADDRESS } from "./constants";
 import OpenSeaAPI from "./openSeaAPI";
 import Avatar from "./avatar";
+import Constants from "./constants";
+
+const NETWORKS_BY_ID = {
+  "1": "live",
+  "2": "morden",
+  "3": "ropsten",
+  "4": "rinkeby"
+};
 
 export default class EthmojiAPI {
-  constructor() {}
-
-  async init(web3Provider) {
+  constructor(web3Provider) {
     if (web3Provider === undefined) {
       throw new Error("Web3 provider is undefined");
     }
-    this.web3Provider = web3Provider;
-    this.openSeaAPI = new OpenSeaAPI();
 
+    this.web3Provider = web3Provider;
+    this.web3 = new Web3(web3Provider);
+    this.network = NETWORKS_BY_ID[this.web3.version.network];
+    if (this.network !== "live" && this.network !== "rinkeby") {
+      throw new Error("Please connect to the Mainnet or Rinkeby");
+    }
+
+    this.constants = new Constants(this.network);
+    this.openSeaAPI = new OpenSeaAPI(this.constants.apiUrl);
+  }
+
+  async init() {
     const EthmojiContract = contract(Ethmoji);
     EthmojiContract.setProvider(this.web3Provider);
     try {
-      this.contractInstance = await EthmojiContract.at(ETHMOJI_ADDRESS);
+      this.contractInstance = await EthmojiContract.at(
+        this.constants.contractAddress
+      );
     } catch (error) {
       throw new Error(error);
     }
@@ -29,7 +47,7 @@ export default class EthmojiAPI {
     if (tokenId.toString() === "0") return undefined;
     try {
       const asset = await this.openSeaAPI.get(
-        `/asset/${ETHMOJI_ADDRESS}/${tokenId.toString()}/`
+        `/asset/${this.constants.contractAddress}/${tokenId.toString()}/`
       );
       return new Avatar(asset);
     } catch (error) {

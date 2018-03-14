@@ -1,5 +1,3 @@
-import { OPENSEA_URL } from "./constants";
-
 export default class Avatar {
   constructor(attrs = {}) {
     this.setAttrs(attrs);
@@ -14,6 +12,5 @@ export default class Avatar {
     this.imageUrl = attrs.image_url;
     this.ownerAddress = (ownerSource || {}).address;
     this.ownerUsername = ((ownerSource || {}).user || {}).username;
-    this.ownerLink = `${OPENSEA_URL}/accounts/${this.ownerAddress}`;
   }
 }

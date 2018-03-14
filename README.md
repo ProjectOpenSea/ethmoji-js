@@ -14,8 +14,8 @@ yarn add ethmoji-js
 import EthmojiAPI from "ethmoji-js";
 ...
 
-const ethmojiAPI = new EthmojiAPI();
-await ethmojiAPI.init(web3.currentProvider)
+const ethmojiAPI = new EthmojiAPI(web3.currentProvider);
+await ethmojiAPI.init();
 await avatar =  ethmojiAPI.getAvatar(ownerAddress);
 => Avatar {
   name: Ethmoji name
@@ -23,6 +23,5 @@ await avatar =  ethmojiAPI.getAvatar(ownerAddress);
   imageUrl: Ethmoji image url for displaying
   ownerAddress: Ethmoji ownerAddress
   ownerUsername: Ethmojis ownerUsername on OpenSea
-  ownerLink: Link to account on OpenSea
 }
 ```

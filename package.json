@@ -1,6 +1,6 @@
 {
   "name": "ethmoji-js",
-  "version": "0.0.11",
+  "version": "0.0.14",
   "description": "Add an Ethmoji avatar for users of your dapp",
   "main": "lib/index.js",
   "scripts": {
@@ -12,13 +12,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ProjectOpenSea/ethmoji-avatar.git"
+    "url": "git+https://github.com/ProjectOpenSea/ethmoji-js.git"
   },
-  "keywords": [
-    "ethereum",
-    "ethmoji",
-    "smart-contracts"
-  ],
+  "keywords": ["ethereum", "ethmoji", "smart-contracts"],
   "author": "support@opensea.io",
   "license": "ISC",
   "bugs": {
@@ -26,7 +22,7 @@
   },
   "homepage": "https://github.com/ProjectOpenSea/ethmoji-js#readme",
   "dependencies": {
-    "ethmoji-contracts": "https://github.com/dfinzer/ethmoji-contracts",
+    "ethmoji-contracts": "^1.0.0",
     "humps": "^2.0.1",
     "jquery-param": "^1.0.0",
     "truffle-contract": "^3.0.4",

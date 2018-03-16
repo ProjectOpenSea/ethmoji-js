@@ -1,6 +1,6 @@
 const CONTRACT_ADDRESSES = {
   live: undefined,
-  rinkeby: "0x91edecf2ebf1230441d0a175eb587d8c31872814"
+  rinkeby: "0x8d37449b2cd36a6ac57011f43490a8ed3685d3c9"
 };
 
 const OPENSEA_URLS = {

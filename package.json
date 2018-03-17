@@ -1,6 +1,6 @@
 {
   "name": "ethmoji-js",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "Add an Ethmoji avatar for users of your dapp",
   "main": "lib/index.js",
   "scripts": {

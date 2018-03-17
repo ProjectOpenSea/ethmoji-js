@@ -50,7 +50,6 @@ export default class EthmojiAPI {
       const asset = await this.openSeaAPI.get(
         `/asset/${this.constants.contractAddress}/${tokenId.toString()}/`
       );
-      console.log(asset);
       return new Avatar(asset);
     } catch (error) {
       throw new Error(error);

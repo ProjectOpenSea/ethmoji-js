@@ -44,13 +44,17 @@ export default class EthmojiAPI {
   }
 
   async getAvatar(ownerAddress) {
-    const tokenId = await this.contractInstance.getAvatar(ownerAddress);
+    let tokenId;
+    try {
+      tokenId = await this.contractInstance.getAvatar(ownerAddress);
+    } catch (error) {
+      throw new Error(error);
+    }
     if (tokenId.toString() === "0") return undefined;
     try {
       const asset = await this.openSeaAPI.get(
         `/asset/${this.constants.contractAddress}/${tokenId.toString()}/`
       );
-      console.log(asset);
       return new Avatar(asset);
     } catch (error) {
       throw new Error(error);

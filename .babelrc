@@ -4,7 +4,9 @@
       "targets": {
         "node": "current"
       }
-    }]
+    }],
+    "es2015",
+    "es2017"
   ],
   "plugins": ["transform-runtime", "transform-decorators-legacy"]
 }
